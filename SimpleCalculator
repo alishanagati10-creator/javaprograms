@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class SimpleCalculator {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("\n--- Simple Calculator ---");
+            System.out.println("1. Multiply");
+            System.out.println("2. Divide");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice: ");
+
+            choice = sc.nextInt();
+
+            if (choice == 1 || choice == 2) {
+                System.out.print("Enter number 1: ");
+                double n1 = sc.nextDouble();
+
+                System.out.print("Enter number 2: ");
+                double n2 = sc.nextDouble();
+
+                if (choice == 1) {
+                    System.out.println("Multiplication = " + (n1 * n2));
+                } 
+                else {
+                    if (n2 != 0) {
+                        System.out.println("Division = " + (n1 / n2));
+                    } else {
+                        System.out.println("Error: Cannot divide by zero");
+                    }
+                }
+            } 
+            else if (choice == 3) {
+                System.out.println("Calculator closed.");
+            } 
+            else {
+                System.out.println("Invalid choice!");
+            }
+
+        } while (choice != 3);
+
+        sc.close();
+    }
+}
+
